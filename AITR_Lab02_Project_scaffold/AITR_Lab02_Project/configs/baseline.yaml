@@ -1,0 +1,31 @@
+# Template only. Freeze exact settings before a real experiment.
+experiment:
+  name: taxonomy_guided_hallucination_baseline
+  seed: 42
+  status: planned
+
+data:
+  dataset_name: TO_BE_SELECTED
+  dataset_version: TO_BE_RECORDED
+  split_manifest: data/split_manifest.csv
+  text_field: response
+  label_field: label
+  evidence_field: evidence
+  restricted_raw_data_in_repository: false
+
+model:
+  approach: baseline_to_be_selected
+  model_id: TO_BE_SELECTED
+  model_version: TO_BE_RECORDED
+  temperature: 0.0
+
+evaluation:
+  labels: [supported, contradicted, insufficient_evidence]
+  metrics: [precision_per_class, recall_per_class, f1_per_class, macro_f1, confusion_matrix]
+  report_sample_counts: true
+
+outputs:
+  root: results/
+  save_predictions: true
+  save_metrics: true
+  save_logs: true
